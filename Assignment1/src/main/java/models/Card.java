@@ -6,6 +6,7 @@ package models;
 public class Card {
 
     private char value;
+    private char suit;
 
     public void setValue(char v) {
         value = v;
@@ -13,5 +14,14 @@ public class Card {
 
     public char getValue() {
         return value;
+    }
+
+    public void setSuit(char s) {
+        suit = s;
+
+    }
+
+    public char getSuit(){
+        return suit;
     }
 }
