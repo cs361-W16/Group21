@@ -9,6 +9,24 @@ import static org.junit.Assert.*;
 public class CardClassTest {
 
     @Test
+    public void testCardClassInitialization(){
+
+        // Arrange
+        Card cardone = new Card();
+        Card cardtwo = new Card('T','S');
+        String cardonereceived, cardtworeceived = "";
+
+        // Act
+        cardonereceived = cardone.getCode();
+        cardtworeceived = cardtwo.getCode();
+
+        // Assert
+        assertEquals("00", cardonereceived);
+        assertEquals("TS", cardtworeceived);
+
+    }
+
+    @Test
     public void testCardClassValue(){
 
         // Arrange
@@ -17,7 +35,6 @@ public class CardClassTest {
         char[] received = new char[13];
 
         // Act
-
         // Create cards
         cards = buildCards(13);
 
@@ -45,7 +62,6 @@ public class CardClassTest {
         char[] received = new char[4];
 
         // Act
-
         // Create cards
         cards = buildCards(4);
 
@@ -61,6 +77,25 @@ public class CardClassTest {
 
         // Assert
         assertArrayEquals(suit, received);
+
+    }
+
+    @Test
+    public void testCardClassCode(){
+
+        // Arrange
+        Card c = new Card();
+        String expected = "TS";
+        String received = "";
+
+        // Act
+        c.setValue('T');
+        c.setSuit('S');
+        received = c.getCode();
+
+        // Assert
+        assertEquals(expected, received);
+
 
     }
 
