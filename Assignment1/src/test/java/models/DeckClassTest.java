@@ -32,6 +32,7 @@ public class DeckClassTest {
 
         // Arrange
         Deck deck = new Deck();
+
         // Expect
         int expect_deck_count = 52;
         String expect_card_first = "AD";
@@ -56,5 +57,22 @@ public class DeckClassTest {
 
     }
 
-    
+    @Test
+    public void testDeckClassDeal(){
+
+        // Arrange
+        Deck deck = new Deck();
+
+        // Expect
+        int expect_deck_count = 51;
+
+        // Received
+        int received_deck_count;
+
+        // Act
+        deck.Make();
+        deck.deal()
+
+    }
+
 }
