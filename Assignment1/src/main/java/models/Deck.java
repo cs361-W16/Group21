@@ -1,7 +1,6 @@
 package models;
 
 /**
-<<<<<<< HEAD
  * Created by nathan on 1/19/16.
  */
 
@@ -40,5 +39,6 @@ public class Deck {
         count--;
         return topcard;
     }
+
 
 }

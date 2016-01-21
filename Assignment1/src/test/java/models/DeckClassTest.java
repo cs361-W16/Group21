@@ -1,7 +1,6 @@
 package models;
 
 import org.junit.Test;
-<<<<<<< HEAD
 
 import static org.junit.Assert.*;
 
@@ -72,7 +71,7 @@ public class DeckClassTest {
 
         // Act
         deck.Make();
-        deck.Deal();
+        deck.deal();
 
     }
 
