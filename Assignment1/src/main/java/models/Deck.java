@@ -5,5 +5,8 @@ package models;
  */
 
 public class Deck {
-    
+    public int getCount()
+    {
+
+    }
 }
