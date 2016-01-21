@@ -12,7 +12,7 @@ public class Deck {
     private Card cards[];
     private int count;
 
-    Deck() {
+    public Deck() {
         cards = new Card[NUM_SIZE];
         count = 0;
     }
@@ -36,7 +36,6 @@ public class Deck {
 
     public Card Deal() {
         Card topcard = cards[count - 1];
-        cards[count - 1 ] = null;
         count--;
         return topcard;
     }
