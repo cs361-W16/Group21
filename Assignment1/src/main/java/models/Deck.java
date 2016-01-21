@@ -1,6 +1,7 @@
 package models;
 
 /**
+<<<<<<< HEAD
  * Created by nathan on 1/19/16.
  */
 
@@ -41,4 +42,14 @@ public class Deck {
     }
 
 
+=======
+ * Created by Devin on 1/20/2016.
+ */
+
+public class Deck {
+    public int getCount()
+    {
+
+    }
+>>>>>>> cs361-W16/master
 }
