@@ -64,14 +64,20 @@ public class DeckClassTest {
         Deck deck = new Deck();
 
         // Expect
-        int expect_deck_count = 51;
+        int expect_deck_count = 50;
 
         // Received
         int received_deck_count;
+        Card recived_card_top;
 
         // Act
         deck.Make();
-        deck.deal();
+        recived_card_top = deck.Deal();
+        received_deck_count = deck.getCount();
+
+        // Assert
+        assertEquals("KC", recived_card_top.getCode());
+        assertEquals(expect_deck_count, received_deck_count);
 
     }
 
