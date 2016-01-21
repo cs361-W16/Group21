@@ -17,9 +17,8 @@ public class DeckClassTest {
         int expected = 0;
         int received;
 
-
         // Act
-        received = deck.getCount();
+        received = deck.getRemain();
 
         // Assert
         assertEquals(expected, received);
@@ -46,7 +45,7 @@ public class DeckClassTest {
 
         // Act
         deck.Make();
-        received_deck_count = deck.getCount();
+        received_deck_count = deck.getRemain();
         received_card_first = deck.getCard(0);
         received_card_last = deck.getCard(51);
 
@@ -65,9 +64,9 @@ public class DeckClassTest {
 
         // Expect
         int expect_deck_count_one = 51;
-        String expect_card_one = "KC";
+        String expect_card_one = "AD";
         int expect_deck_count_two = 50;
-        String expect_card_two = "QC";
+        String expect_card_two = "2D";
 
         // Received
         int received_deck_count_one, received_deck_count_two;
@@ -76,10 +75,10 @@ public class DeckClassTest {
         // Act
         deck.Make();
         received_card_one = deck.Deal();
-        received_deck_count_one = deck.getCount();
+        received_deck_count_one = deck.getRemain();
 
         received_card_two = deck.Deal();
-        received_deck_count_two = deck.getCount();
+        received_deck_count_two = deck.getRemain();
 
         // Assert
         assertEquals(expect_card_one, received_card_one.getCode());
@@ -91,10 +90,10 @@ public class DeckClassTest {
     }
 
     @Test
-    public void testDeckClassMakeCount(){
+    public void testDeckClassMake(){
         Deck deck = new Deck();
         deck.Make();
-        assertEquals(52, deck.getCount());
+        assertEquals(52, deck.getRemain());
     }
 
     @Test
@@ -105,24 +104,72 @@ public class DeckClassTest {
 
         // Expect
         int expect_deck_count = 0;
-        String expect_card = "AD";
+        String expect_card = "KC";
 
         // Received
         int received_deck_count;
         Card received_card;
 
         // Act
+        deck.Make();
         // Deal all cards but one
-        for(int i = 51; i > 50; i--){
+        while(deck.getRemain() != 1){
             deck.Deal();
         }
 
         received_card = deck.Deal();
-        received_deck_count = deck.getCount();
+        received_deck_count = deck.getRemain();
 
         // Assert
         assertEquals(expect_card, received_card.getCode());
         assertEquals(expect_deck_count, received_deck_count);
+
+    }
+    @Test
+    public void testDeckClassUsedCount(){
+
+        // Arrange
+        Deck deck = new Deck();
+
+        // Expected
+        int expected_used_count = 0;
+
+        // Received
+        int received_used_count;
+
+        // Act
+        deck.Make();
+        // TODO: Need to add a deal
+
+        received_used_count = deck.getUsed();
+
+        // Assert
+
+        assertEquals(expected_used_count, received_used_count);
+
+    }
+
+    @Test
+    public void testDeckClassRemainCount(){
+
+        // Arrange
+        Deck deck = new Deck();
+
+        // Expected
+        int expected_used_count = 52;
+
+        // Received
+        int received_used_count;
+
+        // Act
+        deck.Make();
+        // TODO: Need to add a deal
+
+        received_used_count = deck.getRemain();
+
+        // Assert
+
+        assertEquals(expected_used_count, received_used_count);
 
     }
 
