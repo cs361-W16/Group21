@@ -90,6 +90,42 @@ public class DeckClassTest {
 
     }
 
+    @Test
+    public void testDeckClassMakeCount(){
+        Deck deck = new Deck();
+        deck.Make();
+        assertEquals(52, deck.getCount());
+    }
+
+    @Test
+    public void testDeckClassDealAll(){
+
+        // Arrange
+        Deck deck = new Deck();
+
+        // Expect
+        int expect_deck_count = 0;
+        String expect_card = "AD";
+
+        // Received
+        int received_deck_count;
+        Card received_card;
+
+        // Act
+        // Deal all cards but one
+        for(int i = 51; i > 50; i--){
+            deck.Deal();
+        }
+
+        received_card = deck.Deal();
+        received_deck_count = deck.getCount();
+
+        // Assert
+        assertEquals(expect_card, received_card.getCode());
+        assertEquals(expect_deck_count, received_deck_count);
+
+    }
+
 
 
 }
