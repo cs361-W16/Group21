@@ -33,5 +33,12 @@ public class Deck {
         }
     }
 
+    public Card Deal(){
+        Card topcard = cards[count];
+        cards[count] = null;
+        count--;
+        return topcard;
+    }
+
 
 }
