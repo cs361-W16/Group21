@@ -20,7 +20,8 @@ public class Deck {
     public int getCount() {
         return count;
     }
-    public String getCard(int c){
+
+    public String getCard(int c) {
         return cards[c].getCode();
     }
 
@@ -33,9 +34,9 @@ public class Deck {
         }
     }
 
-    public Card Deal(){
-        Card topcard = cards[count];
-        cards[count] = null;
+    public Card Deal() {
+        Card topcard = cards[count - 1];
+        cards[count - 1 ] = null;
         count--;
         return topcard;
     }
