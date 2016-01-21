@@ -41,15 +41,4 @@ public class Deck {
         return topcard;
     }
 
-
-=======
- * Created by Devin on 1/20/2016.
- */
-
-public class Deck {
-    public int getCount()
-    {
-
-    }
->>>>>>> cs361-W16/master
 }
