@@ -8,29 +8,37 @@ package models;
  *
  */
 public class Game {
-    private static int COL_NUM = 13;
-    private String[] columnOne;
+    private static int COL_NUM = 4;
+    private static int ROW_NUM = 13;
+    private String[][] board;
     private Deck deck;
     int columnCount;
 
-    Game() {
+    public Game() {
         Deck deck = new Deck();
-        columnOne = new String[COL_NUM];
+        board = new String[ROW_NUM][COL_NUM];
     }
 
-    //initialize column one
+    /**
+     *
+     * @param
+     * @return
+     */
     public int columnInitialized() {
         int count = 0;
-        for (int i = 0; i < COL_NUM; i++) {
-            columnOne[i] = "";
-            if (columnOne[i] == "")
-                count = count + 1;
+        for (int i = 0; i < ROW_NUM; i++) {
+            for (int j = 0; j < COL_NUM; j++) {
+                board[i][j] = null;
+                if (board[i][j] == null)
+                    count = count + 1;
+            }
         }
-        if (count == 13)
+        if (count == 52)
             return 0;
         else
             return 1;
     }
+
 //Delete card from rowsa
     public void Delete(int colnum)
     {
@@ -41,4 +49,3 @@ public class Game {
             board[bottom][colnum] =  null;
         }
     }
-}
