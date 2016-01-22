@@ -17,13 +17,9 @@ public class Game {
     public Game() {
         Deck deck = new Deck();
         board = new String[ROW_NUM][COL_NUM];
+        columnInitialized();
     }
 
-    /**
-     *
-     * @param
-     * @return
-     */
     public int columnInitialized() {
         int count = 0;
         for (int i = 0; i < ROW_NUM; i++) {
@@ -39,28 +35,45 @@ public class Game {
             return 1;
     }
 
-//Delete card from rows
-    public void Delete(int colnum)
-    {
 
-        if(colnum == 0 )
-        {
-            bottom = getBottom(colnum);
-            board[bottom][colnum] =  null;
+    /**
+     * @param column
+     * @return bottom of column
+     */
+    public int getBottom(int column) {
+        int count = 0;
+        for (int i = 0; i < ROW_NUM; i++) {
+            String j = board[i][column];
+            if (j == null) {
+                return count;
+            }
+            count++;
         }
-        else if(colnum == 1 )
-        {
-            bottom = getBottom(colnum);
-            board[bottom][colnum] =  null;
-        }
-        else if(colnum == 2 )
-        {
-            bottom = getBottom(colnum);
-            board[bottom][colnum] =  null;
-        }
-        else if(colnum == 3 )
-        {
-            bottom = getBottom(colnum);
-            board[bottom][colnum] =  null;
-        }
+        return count;
     }
+
+
+    //Delete card from columns
+    public void Delete(int colnum) {
+
+        int bottom;
+
+        if (colnum == 0) {
+            bottom = getBottom(colnum);
+            board[bottom][colnum] = null;
+        } else if (colnum == 1) {
+            bottom = getBottom(colnum);
+            board[bottom][colnum] = null;
+        } else if (colnum == 2) {
+            bottom = getBottom(colnum);
+            board[bottom][colnum] = null;
+        } else if (colnum == 3) {
+            bottom = getBottom(colnum);
+
+        }
+
+
+    }
+
+
+}
