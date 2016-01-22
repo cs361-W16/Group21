@@ -31,5 +31,14 @@ public class Game {
         else
             return 1;
     }
-
+//Delete card from rowsa
+    public void Delete(int colnum)
+    {
+        int button;
+        if(colnum == 1 )
+        {
+            botton = getBottom(columnOne);
+            board[bottom][colnum] =  null;
+        }
+    }
 }
