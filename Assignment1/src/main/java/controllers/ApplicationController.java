@@ -16,6 +16,7 @@
 
 package controllers;
 
+import ninja.Context;
 import ninja.Result;
 import ninja.Results;
 
@@ -31,6 +32,11 @@ public class ApplicationController {
 
     public Result acesUp() {
         return Results.html().template("views/AcesUp/AcesUp.flt.html");
+    }
+
+    public Result deleteCard(Context context, String id){
+
+        return Results.json().render(id);
     }
 
 }
