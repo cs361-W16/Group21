@@ -35,6 +35,7 @@ public class Game {
             return 1;
     }
 
+
     /**
      * @param  column
      * @return bottom of column
@@ -51,3 +52,15 @@ public class Game {
         return count;
     }
 }
+
+//Delete card from rowsa
+/**    public void Delete(int colnum)
+    {
+        int bottom;
+        if(colnum == 1 )
+        {
+            bottom = getBottom(0);
+            board[bottom][colnum] =  null;
+        }
+    }*/
+
