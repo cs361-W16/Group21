@@ -17,23 +17,28 @@ public class GameClassTest {
     public void testGameColumnOne() {
         //Arrange
         Game game = new Game();
-        int expectedInitialValue = 0;
+
+        int expected = 0; //Expected value
 
         //act
-        int receivedValue = game.columnInitialized();
+        int received = game.columnInitialized();
 
         //Assert
-        assertEquals(expectedInitialValue, receivedValue);
+        assertEquals(expected, received);
     }
 
     @Test
-    public void testAllGameColumns() {
+    public void testBottom() {
         //Arrange
         Game game = new Game();
-        int expected = 0;                   //The expected value
+        int expected = 0;
+        int bottomOne, bottomTwo, bottomThree, bottomFour;
 
         //Act
-        int recievedColumnTwo = game.columnInitialized();
-    }
+        bottomOne = game.getBottom(0);                      //Gets the bottom for one
 
+        //Assert
+        assertEquals(expected, bottomOne);
+
+    }
 }
