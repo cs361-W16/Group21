@@ -17,13 +17,9 @@ public class Game {
     public Game() {
         Deck deck = new Deck();
         board = new String[ROW_NUM][COL_NUM];
+        columnInitialized();
     }
 
-    /**
-     *
-     * @param
-     * @return
-     */
     public int columnInitialized() {
         int count = 0;
         for (int i = 0; i < ROW_NUM; i++) {
@@ -39,13 +35,32 @@ public class Game {
             return 1;
     }
 
+
+    /**
+     * @param  column
+     * @return bottom of column
+     */
+    public int getBottom(int column) {
+        int count = 0;
+        for (int i = 0; i < ROW_NUM; i++) {
+            String j = board[i][column];
+            if (j == null) {
+                return count;
+            }
+            count++;
+        }
+        return count;
+    }
+}
+
 //Delete card from rowsa
-    public void Delete(int colnum)
+/**    public void Delete(int colnum)
     {
-        int button;
+        int bottom;
         if(colnum == 1 )
         {
-            botton = getBottom(columnOne);
+            bottom = getBottom(0);
             board[bottom][colnum] =  null;
         }
-    }
+    }*/
+
