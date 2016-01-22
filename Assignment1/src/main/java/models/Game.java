@@ -39,13 +39,28 @@ public class Game {
             return 1;
     }
 
-//Delete card from rowsa
+//Delete card from rows
     public void Delete(int colnum)
     {
-        int button;
-        if(colnum == 1 )
+
+        if(colnum == 0 )
         {
-            botton = getBottom(columnOne);
+            bottom = getBottom(colnum);
+            board[bottom][colnum] =  null;
+        }
+        else if(colnum == 1 )
+        {
+            bottom = getBottom(colnum);
+            board[bottom][colnum] =  null;
+        }
+        else if(colnum == 2 )
+        {
+            bottom = getBottom(colnum);
+            board[bottom][colnum] =  null;
+        }
+        else if(colnum == 3 )
+        {
+            bottom = getBottom(colnum);
             board[bottom][colnum] =  null;
         }
     }
