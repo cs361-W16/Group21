@@ -71,7 +71,7 @@ public class DeckClassTest {
 
         // Act
         deck.Make();
-        deck.deal();
+        deck.Deal();
 
     }
 
