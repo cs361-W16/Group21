@@ -31,6 +31,9 @@ public class Routes implements ApplicationRoutes {
 //        router.GET().route("/hello_world.json").with(ApplicationController.class, "helloWorldJson");
         router.GET().route("/AcesUp").with(ApplicationController.class, "acesUp");
 
+        // Game function routs
+        router.POST().route("/deleteCard").with(ApplicationController.class, "deleteCard");
+
 
         ///////////////////////////////////////////////////////////////////////
         // Assets (pictures / javascript)
