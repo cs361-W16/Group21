@@ -36,9 +36,15 @@ public class GameClassTest {
 
         //Act
         bottomOne = game.getBottom(0);                      //Gets the bottom for one
+        bottomTwo = game.getBottom(1);
+        bottomThree = game.getBottom(2);
+        bottomFour = game.getBottom(3);
 
         //Assert
         assertEquals(expected, bottomOne);
+        assertEquals(expected, bottomTwo);
+        assertEquals(expected, bottomThree);
+        assertEquals(expected, bottomFour);
 
     }
 }
