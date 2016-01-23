@@ -41,7 +41,7 @@ public class Game {
      * @return bottom of column
      */
     public int getBottom(int column) {
-        int count = 0;
+        int count = 0;                          //The count is the row number where the last card is
         for (int i = 0; i < ROW_NUM; i++) {
             String j = board[i][column];
             if (j == null) {
