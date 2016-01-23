@@ -27,16 +27,14 @@ public class AcesUpConrollerTest extends NinjaTest {
     public void testPOSTDeleteCard(){
 
         // Arrange
-        String id = "col-one";
+        String id = "col-two";
         String response = ninjaTestBrowser.postJson("http://localhost:8080" + URL_DELETE_CARD,id);
-
-
         try {
             // Act
             String resultString = new ObjectMapper().readValue(response, String.class);
 
             // Assert
-            assertEquals("col-one",resultString);
+            assertEquals("col-two",resultString);
         } catch (IOException e) {
             e.printStackTrace();
         }
