@@ -93,7 +93,6 @@ public class Deck {
         {
             tempDeck[counter] = null;
         }
-
         if ((getRemain() == NUM_SIZE) && (getUsed() == 0))
         {
             for(int shuffleCount = 0; shuffleCount <= numShuffles; shuffleCount++)
