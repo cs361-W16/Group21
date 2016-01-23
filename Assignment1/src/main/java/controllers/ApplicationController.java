@@ -16,6 +16,7 @@
 
 package controllers;
 
+import models.Game;
 import ninja.Context;
 import ninja.Result;
 import ninja.Results;
@@ -39,4 +40,18 @@ public class ApplicationController {
         return Results.json().render(id);
     }
 
+    public Result dealCard(Context context, Game gamestate){
+
+        gamestate.dealToBoard();
+
+        return Results.json().render(gamestate);
+    }
+
+    public Result initializeGame(){
+        Game gamestate = new Game();
+        gamestate.columnInitialized();
+        gamestate.dealToBoard();
+
+        return Results.json().render(gamestate);
+    }
 }
