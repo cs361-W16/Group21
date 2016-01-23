@@ -173,6 +173,27 @@ public class DeckClassTest {
 
     }
 
+    @Test
+    public void testDeckClassShuffle(){
+        // Arrange
+        Deck deck = new Deck();
 
+        //Expected
+        String expect_card = "AD";
+
+        // Received
+        Card received_card;
+
+        //Act
+        deck.Make();
+        deck.Shuffle();
+        received_card = deck.Deal();
+
+        //Assert
+        assertNotEquals(expect_card, received_card.getCode());
+        //assertEquals(expect_card, received_card_shuf);
+
+
+    }
 
 }
