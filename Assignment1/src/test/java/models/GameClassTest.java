@@ -47,4 +47,18 @@ public class GameClassTest {
         assertEquals(expected, bottomFour);
 
     }
+
+    //Test Delete of card from game
+    @Test
+    public void testDeletecard() {
+        //Arrange
+        Game game = new Game();
+
+        //deleting the card
+        game.Delete(3);
+
+        //checking deletion
+        assertNotNull(game);
+
+    }
 }
