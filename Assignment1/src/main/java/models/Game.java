@@ -41,7 +41,7 @@ public class Game {
      * @return bottom of column
      */
     public int getBottom(int column) {
-        int count = 0;
+        int count = 0;                          //The count is the row number where the last card is
         for (int i = 0; i < ROW_NUM; i++) {
             String j = board[i][column];
             if (j == null) {
@@ -52,6 +52,10 @@ public class Game {
         return count;
     }
 
+    /**
+     * Deals cards to the game board
+     * @return
+     */
     public int dealToBoard() {
         int count = 0;          //Checks to make sure that the game board is no longer empty
         int bottom;             //Bottom of the column
@@ -76,6 +80,18 @@ public class Game {
             }
         }
         return count;
+    }
+
+    public void reset() {
+        for (int i = 0; i < ROW_NUM; i++) {
+            for (int j = 0; j < COL_NUM; j++) {
+                board[i][j] = null;
+            }
+        }
+
+        Deck deck = new Deck();
+        deck.Make();
+        deck.Shuffle();
     }
 }
 
