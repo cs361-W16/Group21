@@ -93,16 +93,40 @@ public class Game {
         deck.Make();
         deck.Shuffle();
     }
-}
 
-//Delete card from rowsa
-/**    public void Delete(int colnum)
+    /**
+     * TERRANCE did this part, but his computer during the commit and it broke.
+     * He is submitting this from Devin's GitHub Account because it deleted EVERYTHING
+     * from his assignment folder after the failed commit. When we tried to reclone, it would
+     * not clone the main folder. Only the tests.
+     */
+    public void Delete(int colnum)
     {
         int bottom;
-        if(colnum == 1 )
+        Game game = new Game();
+        if(colnum == 0 )
         {
-            bottom = getBottom(0);
+            bottom = game.getBottom(colnum);
             board[bottom][colnum] =  null;
         }
-    }*/
+        if(colnum == 1 )
+        {
+            bottom = game.getBottom(colnum);
+            board[bottom][colnum] =  null;
+        }
+        if(colnum == 2 )
+        {
+            bottom = game.getBottom(colnum);
+            board[bottom][colnum] =  null;
+        }
+        if(colnum == 3 )
+        {
+            bottom = game.getBottom(colnum);
+            board[bottom][colnum] =  null;
+        }
+
+    }
+}
+
+
 

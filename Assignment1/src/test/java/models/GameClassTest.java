@@ -92,4 +92,23 @@ public class GameClassTest {
         assertEquals(expected_card_count, received_card_count);
         assertEquals(expected_card_count2, received_card_count2);
     }
+
+    @Test
+    public void testDeletecard() {
+        //Arrange
+        Game game = new Game();
+        int beforeDelete;
+        int afterDelete;
+
+        //deleting the card
+        game.dealToBoard();
+        beforeDelete = game.getBottom(3);
+        game.Delete(3);
+        afterDelete = game.getBottom(3);
+
+        //checking deletion
+        assertNotNull(game);
+        assertNotEquals(beforeDelete, afterDelete);
+
+    }
 }
