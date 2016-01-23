@@ -47,4 +47,17 @@ public class GameClassTest {
         assertEquals(expected, bottomFour);
 
     }
+
+    @Test
+    public void testDealToBoard() {
+        //Arrange
+        Game game = new Game();
+        int expected = 4;
+
+        //Act
+        int recieved = game.dealToBoard();
+
+        //Assert
+        assertEquals(expected, recieved);
+    }
 }
