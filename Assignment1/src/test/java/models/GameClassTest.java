@@ -48,13 +48,14 @@ public class GameClassTest {
 
     }
 
+    //Test Delete of card from game
     @Test
     public void testDeletecard() {
         //Arrange
         Game game = new Game();
 
-        //deleting the user
-        game.delete();
+        //deleting the card
+        game.Delete(3);
 
         //checking deletion
         assertNotNull(game);
