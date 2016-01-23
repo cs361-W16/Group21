@@ -179,19 +179,29 @@ public class DeckClassTest {
         Deck deck = new Deck();
 
         //Expected
-        String expect_card = "AD";
+        String top_card = "AD";
+        Card expect_card;
+        int remaining_after = 50;
+        int remaining_before = 52;
 
         // Received
         Card received_card;
+        int remain_received_before;
+        int remain_received_after;
 
         //Act
         deck.Make();
+        remain_received_before = deck.getRemain();
+        expect_card = deck.Deal();
         deck.Shuffle();
         received_card = deck.Deal();
+        remain_received_after = deck.getRemain();
 
         //Assert
-        assertNotEquals(expect_card, received_card.getCode());
-        //assertEquals(expect_card, received_card_shuf);
+        assertEquals(remaining_before, remain_received_before);
+        assertEquals(remaining_after, remain_received_after);
+        assertEquals(top_card, expect_card.getCode());
+        assertNotEquals(expect_card.getCode(), received_card.getCode());
 
 
     }
