@@ -53,12 +53,17 @@ public class GameClassTest {
     public void testDeletecard() {
         //Arrange
         Game game = new Game();
+        int beforeDelete;
+        int afterDelete;
 
         //deleting the card
+        game.Deal();
+        beforeDelete = game.getBottom(3);
         game.Delete(3);
+        afterDelete = game.getBottom(3);
 
         //checking deletion
-        assertNotNull(game);
+        assertNotEquals(beforeDelete, afterDelete);
 
     }
 }

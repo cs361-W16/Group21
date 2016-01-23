@@ -69,6 +69,7 @@ public class Game {
             board[bottom][colnum] = null;
         } else if (colnum == 3) {
             bottom = getBottom(colnum);
+            board[bottom][colnum] = null;
 
         }
 
