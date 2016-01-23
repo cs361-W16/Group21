@@ -89,6 +89,8 @@ public class Game {
             }
         }
 
+        Deck deck = new Deck();
+        deck.Make();
         deck.Shuffle();
     }
 }
