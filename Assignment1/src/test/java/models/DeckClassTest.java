@@ -176,34 +176,34 @@ public class DeckClassTest {
     @Test
     public void testDeckClassShuffle(){
         // Arrange
-        Deck deck = new Deck();
+        Deck deck1 = new Deck();
+        Deck deck2 = new Deck();
 
         //Expected
         String top_card = "AD";
-        Card expect_card;
-        int remaining_after = 50;
+        //Card expect_card;
+        int remaining_after = 51;
         int remaining_before = 52;
 
         // Received
-        Card received_card;
+        Card received_card1, received_card2;
         int remain_received_before;
         int remain_received_after;
 
         //Act
-        deck.Make();
-        remain_received_before = deck.getRemain();
-        expect_card = deck.Deal();
-        deck.Shuffle();
-        received_card = deck.Deal();
-        remain_received_after = deck.getRemain();
+        deck1.Make();
+        remain_received_before = deck1.getRemain();
+        received_card1 = deck1.Deal();
+        deck2.Make();
+        deck2.Shuffle();
+        received_card2 = deck2.Deal();
+        remain_received_after = deck2.getRemain();
 
         //Assert
         assertEquals(remaining_before, remain_received_before);
         assertEquals(remaining_after, remain_received_after);
-        assertEquals(top_card, expect_card.getCode());
-        assertNotEquals(expect_card.getCode(), received_card.getCode());
-
-
+        assertEquals(top_card, received_card1.getCode());
+        assertNotEquals(received_card1.getCode(), received_card2.getCode());
     }
 
 }
