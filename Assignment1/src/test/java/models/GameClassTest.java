@@ -57,7 +57,7 @@ public class GameClassTest {
         int afterDelete;
 
         //deleting the card
-        game.Deal();
+        //game.dealToBoard();
         beforeDelete = game.getBottom(3);
         game.Delete(3);
         afterDelete = game.getBottom(3);
