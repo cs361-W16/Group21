@@ -83,5 +83,45 @@ public class Deck {
         return card;
     }
 
-
+    /**
+     * Shuffles deck
+     */
+    public void Shuffle(){
+        Card tempDeck[] = new Card[NUM_SIZE];
+        int numShuffles = 3;
+        for (int counter = 0; counter <= (NUM_SIZE - 1); counter++)
+        {
+            tempDeck[counter] = null;
+        }
+        if ((getRemain() == NUM_SIZE) && (getUsed() == 0))
+        {
+            for(int shuffleCount = 0; shuffleCount <= numShuffles; shuffleCount++)
+            {
+                int deckCount = 0;
+                for (int count = 0; count <= (NUM_SIZE - 1); count++)
+                {
+                    if ((count % 2) == 0)
+                    {
+                        tempDeck[deckCount] = cards[count];
+                        deckCount++;
+                    }
+                }
+                for (int count = 0; count <= (NUM_SIZE - 1); count++)
+                {
+                    if ((count % 2) != 0) {
+                        tempDeck[deckCount] = cards[count];
+                        deckCount++;
+                    }
+                }
+                for (int count = 0; count <= (NUM_SIZE - 1); count++)
+                {
+                    cards[count] = tempDeck[count];
+                }
+            }
+        }
+        //Replaces top and bottom cards
+        Card tempval = cards[0];
+        cards[0] = cards[NUM_SIZE - 1];
+        cards[NUM_SIZE - 1] = tempval;
+    }
 }
